@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apartado de Tamales y Atole</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="contenedor-pedido">
+        <h1>¡Aparta tus Tamales y Atole con "Tamales Norberto!" 🫔☕️</h1>
+        <p>Selecciona la cantidad de cada producto. Te esperamos en el punto de encuentro.</p>
+        <div class="horario-ubicacion">
+            <h3>📍 Punto de Recolección</h3>
+            <p><strong>Lugar:</strong> Esquina de Jardin de villi izcalli.</p>
+            <p><small>(Busca nuestra camioneta cafe)</small></p>
+            
+            <h3>⏰ Horario de Venta</h3>
+            <p><strong>Lunes a Sábado:</strong> 6:00 AM - 10:00 PM</p>
+            <p><strong>Domingos:</strong> Lo sentimos esta cerrado</p>
+        </div>
+        <form id="formulario-pedido">
+            <fieldset>
+                <legend>Tamales ($23 c/u $20 ceniza y $7 blancos)</legend>
+                <div class="producto">
+                    <label for="tamal-rojo">Rojo (Cerdo):</label>
+                    <input type="number" id="tamal-rojo" data-precio="23" min="0" value="0" class="cantidad">
+                </div>
+                <div class="producto">
+                    <label for="tamal-verde">Verde (Cerdo):</label>
+                    <input type="number" id="tamal-verde" data-precio="23" min="0" value="0" class="cantidad">
+                </div>
+                <div class="producto">
+                    <label for="tamal-rojo">Rojo (Pollo):</label>
+                    <input type="number" id="tamal-rojo" data-precio="23" min="0" value="0" class="cantidad">
+                </div>
+                 <div class="producto">
+                    <label for="tamal-verde">Verde (Pollo):</label>
+                    <input type="number" id="tamal-verde" data-precio="23" min="0" value="0" class="cantidad">
+                </div>
+                <div class="producto">
+                    <label for="tamal-picadillo">Picadillo (Carne molida):</label>
+                    <input type="number" id="tamal-picadillo" data-precio="23" min="0" value="0" class="cantidad">
+                </div>
+                <div class="producto">
+                    <label for="tamal-acelgas">Acelgas (Acelgas panela jitomate y elote):</label>
+                    <input type="number" id="tamal-acelgas" data-precio="23" min="0" value="0" class="cantidad">
+                </div>
+                <div class="producto">
+                    <label for="tamal-rajas">Rajas (Rajas y panela):</label>
+                    <input type="number" id="tamal-rajas" data-precio="23" min="0" value="0" class="cantidad">
+                </div>
+                <div class="producto">
+                    <label for="tamal-ceniza">Ceniza (Frijoles):</label>
+                    <input type="number" id="tamal-ceniza" data-precio="20" min="0" value="0" class="cantidad">
+                </div>
+                <div class="producto">
+                    <label for="tamal-blancos">Blancos (Masa):</label>
+                    <input type="number" id="tamal-blancos" data-precio="7" min="0" value="0" class="cantidad">
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Atole ($15 vaso individual $35 1/2L $60 1L)</legend>
+                <div class="producto">
+                    <label for="atole-vainilla">Vainilla (Individual):</label>
+                    <input type="number" id="atole-vainilla" data-precio="15" min="0" value="0" class="cantidad">
+                </div>
+                <div class="producto">
+                    <label for="atole-vainilla">Vainilla (1/2L):</label>
+                    <input type="number" id="atole-vainilla" data-precio="35" min="0" value="0" class="cantidad">
+                </div>
+                <div class="producto">
+                    <label for="atole-vainilla">Vainilla (1L):</label>
+                    <input type="number" id="atole-vainilla" data-precio="60" min="0" value="0" class="cantidad">
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Datos de Recolección</legend>
+                <div class="datos-cliente">
+                    <label for="nombre-cliente">Tu Nombre:</label>
+                    <input type="text" id="nombre-cliente" required>
+                </div>
+                <div class="datos-cliente">
+                    <label for="hora-recoleccion">Hora aproximada de recolección:</label>
+                    <input type="time" id="hora-recoleccion" required>
+                </div>
+            </fieldset>
+           
+            <div class="resumen">
+                <p>Total del Pedido: <strong id="total-pedido">$0.00</strong></p>
+                <button type="button" id="boton-apartado">Apartar y Mandar pedido</button>
+            </div>
+        </form>
+
+        <div id="resumen-final" style="display:none;">
+            <h2>🎉 ¡Muchas Gracias por tu Pedido, Esperamos verte a la hora indicada!</h2>
+            <p>El resumen se ha preparado. Haz clic en el botón para **enviarlo por WhatsApp** y confirmar tu apartado:</p>
+            
+            <button onclick="enviarWhatsApp()" class="boton-whatsapp">Enviar Pedido por WhatsApp</button>
+            
+            <button onclick="nuevoPedido()" class="boton-secundario">Hacer Otro Pedido</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
